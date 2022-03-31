@@ -84,7 +84,7 @@ const Form = props => {
                     />
                 </label>
                 <br />
-                <button disabled={disabled} >submit</button>
+                <button name="submitBtn" disabled={disabled} >submit</button>
             </div>
             {/* </StyledInputs> */}
         </form>
