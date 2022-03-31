@@ -1,4 +1,5 @@
 import React from 'react'
+// import styled from 'styled-components'
 
 const Form = props => {
     const {change, submit, errors, disabled} = props;
@@ -14,6 +15,15 @@ const Form = props => {
         change(name, valueToUse)
     }
 
+    // const StyledInputs = styled.div`
+    //     #formInputs {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         flex-direction: column;
+    //     }
+    // `
+    
     return (
         <form className='form container' onSubmit={onSubmit}>
             <div className='form-group submit'>
@@ -25,8 +35,8 @@ const Form = props => {
                     <div>{errors.tos}</div>
                 </div>
             </div>
-
-            <div className='form-group inputs'>
+        {/* <StyledInputs> */}
+            <div id="formInputs" className='form-group inputs'>
                 <h3>Enter your information here</h3>
 
                 <label>First Name:
@@ -66,7 +76,7 @@ const Form = props => {
                 </label>
                 <br />
                 <label>Terms Of Service
-                    <input
+                    <input 
                         type='checkbox'
                         name='tos'
                         onChange={onChange}
@@ -76,6 +86,7 @@ const Form = props => {
                 <br />
                 <button disabled={disabled} >submit</button>
             </div>
+            {/* </StyledInputs> */}
         </form>
     )
 }

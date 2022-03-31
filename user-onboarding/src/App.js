@@ -4,6 +4,7 @@ import './App.css';
 import * as yup from 'yup'
 import axios from 'axios'
 import schema from './validation/formSchema'
+import styled from 'styled-components'
 
 const initialFormValues = {
   first_name: '',
@@ -83,6 +84,12 @@ function App() {
     })
   }, [formValues])
 
+  const StyledUsers = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-contents: space-between;
+  `
+
   return (
     <div className="App">
       <header>
@@ -95,13 +102,14 @@ function App() {
         disabled={disabled}
         errors={formErrors}
       />
+      <StyledUsers>
       {users.map(user => {
         return (<div key={user.id}>
-          <p>{user.first_name}</p>
-          <p>{user.last_name}</p>
-          <p>{user.email}</p>
+          <p>Name: {user.first_name} {user.last_name}</p>
+          <p>Email: {user.email}</p>
         </div>)
      })}
+     </StyledUsers>
     </div>
   );
 }
