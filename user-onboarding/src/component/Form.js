@@ -2,7 +2,7 @@ import React from 'react'
 
 const Form = props => {
     const {change, submit, errors, disabled} = props;
-    const {firstName, lastName, email, password, tos} = props.values;
+    const {first_name, last_name, email, password, tos} = props.values;
 
     const onSubmit = evt => {
         evt.preventDefault()
@@ -18,8 +18,8 @@ const Form = props => {
         <form className='form container' onSubmit={onSubmit}>
             <div className='form-group submit'>
                 <div className='errors'>
-                    <div>{errors.firstName}</div>
-                    <div>{errors.lastName}</div>
+                    <div>{errors.first_name}</div>
+                    <div>{errors.last_name}</div>
                     <div>{errors.email}</div>
                     <div>{errors.password}</div>
                     <div>{errors.tos}</div>
@@ -31,18 +31,18 @@ const Form = props => {
 
                 <label>First Name:
                     <input
-                        value={firstName}
+                        value={first_name}
                         onChange={onChange}
-                        name='firstName'
+                        name='first_name'
                         type='text'
                     />
                 </label>
                 <br />
                 <label>Last Name:
                     <input
-                        value={lastName}
+                        value={last_name}
                         onChange={onChange}
-                        name='lastName'
+                        name='last_name'
                         type='text'
                     />
                 </label>
